@@ -1,0 +1,71 @@
+/*
+this content is stored in a file named "site.css"
+in a directory named "css" in the web root
+*/
+
+body {
+    background-color: #808080;
+    background-image: url("/img/bg.png");
+    font-family: PT Sans Narrow;
+}
+
+.fancy-header {
+    color: blue;
+    text-decoration: underline;
+}
+
+h2 { 
+	color: #ff972f;
+	text-decoration: underline;
+ }
+
+
+ol {
+    background: #808080;
+    padding: 20px;
+}
+
+ul {
+    background: #3399ff;
+    padding: 20px;
+}
+
+ol li {
+    background: #ffe5e5;
+    padding: 5px;
+    margin-left: 35px;
+}
+
+ul li {
+    background: #cce5ff;
+    margin: 5px;
+}
+
+
+table, th, td, tr {
+   border: 1px solid black;
+   padding: 15px;
+   text-align: center;
+   font-size: 15px;
+   font-weight: bold;
+}
+
+/* unvisited */
+a:link {
+    color: red;
+}
+
+/* visited */
+a:visited {
+    color: green;
+}
+
+/* hover */
+a:hover {
+    color: orange;
+}
+
+/* selected */
+a:active {
+    color: blue;
+}
