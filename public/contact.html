@@ -53,11 +53,11 @@
               
               <li><a href="/about.html"><i class="glyphicon glyphicon-user"></i>  about</a></li>
               <li><a href="/resume.html"><i class="glyphicon glyphicon-list-alt"></i> resume</a></li>
-              <li class="active"><a href="/portfolio.html"><i class="glyphicon glyphicon-folder-open"> </i>  portfolio</a></li>
+              <li><a href="/portfolio.html"><i class="glyphicon glyphicon-folder-open"> </i>  portfolio</a></li>
 
 
               <li><a href="/blog.html"><i class="glyphicon glyphicon-eye-open"></i> blog</a></li>
-              <li><a href="/contact.html"><i class="glyphicon glyphicon-envelope"></i> contact</a></li>
+              <li class="active"><a href="/contact.html"><i class="glyphicon glyphicon-envelope"></i> contact</a></li>
             </ul>
             
               <a href="#login" class="btn btn-sm btn-success pull-right" data-toggle="modal">log in</a>
@@ -70,7 +70,57 @@
         </div>
       </nav>
 
-      <div id="register" class="modal fade">
+  
+
+<div class="container">
+    <div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">contact me</h3>
+  </div>
+  <div class="panel-body">
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Send a message</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">title</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> copy to email?
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">message</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3" id="textArea"></textarea>
+        <span class="help-block">Thanks</span>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Clear</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+  </div>
+</div>
+</div>
+
+<!-- start modal -->
+<div id="register" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
