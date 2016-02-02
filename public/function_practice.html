@@ -1,0 +1,121 @@
+<html>
+<head>
+	<title>functions JS</title>
+</head>
+<body>
+
+<h1>functions js</h1>
+
+
+
+
+
+<!-- script js -->
+// <script>
+"use strict";
+	
+// function add() {
+
+// 	console.log(2 + 2);
+// }
+// add();
+// add();
+
+var myNameIs = 'Mike'; // todo: Fill in your name here.
+
+
+
+// todo:
+// Create a function called 'sayHello' that takes a parameter 'name'.
+// When called, the function should log a message that says hello from the passed in name.
+
+function sayHello(name){
+	return console.log("hello from " + name);
+	
+}
+
+// todo: Call the function 'sayHello' passing the variable 'myNameIs' as a parameter.
+sayHello(myNameIs);
+
+// do not worry about the details of this line
+// just know that it generates a random number between 1 and 100
+var random = Math.floor((Math.random()*100)+1);
+
+// todo:
+// Create a function called 'isOdd' that takes a number as a parameter.
+// The function should use the ternary operator to log a message.
+// The log should tell the number passed in and whether it is odd or not.
+
+// todo: Call the function 'isOdd' passing the variable 'random' as a parameter.
+
+
+function isOdd(number){
+
+ (number % 2 !== 0) ? console.log(number + " is odd" ): console.log(number + " is not odd"); 
+			
+
+
+}
+
+isOdd(random);
+
+
+function validNumbers(x, y) {
+	if(isNan(x) || isNan(y)) {
+		console.log("parameters mustbe numbers");
+		return false;
+
+	} else {
+		return true;
+	}
+
+
+
+
+
+}
+
+function sum(a, b) {
+	if (typeof a == 'number' && typeof b == 'number') {
+		return a + b;
+	} else {
+		alert("parameters must be numbers");
+		return false;
+	}
+    return console.log(a + b);
+}
+sum("2", 4);
+
+function difference(a, b) {
+    return console.log(a - b);
+}
+difference(8, 4);
+
+
+function product(a, b) {
+    return console.log(a * b);
+}
+product(4, 4);
+
+function quotient(a, b) {
+    return console.log(a / b);
+}
+quotient(4, 4);
+
+
+function remainder(a, b) {
+    return console.log(a % b);
+    return console.log(isNan(a,b));
+    return true;
+}
+remainder(6, 4);
+
+
+
+
+// </script>
+
+<!-- end js scripts -->
+
+</body>
+</html>
