@@ -26,6 +26,18 @@ console.log("the third name is " + names[2]);
 
 console.log("the fourth name is " + names[3]);
 
+for (var i = 0; i < names.length; i++) {
+    console.log('The name at index ' + i + ' is: ' + names[i]);
+}
+
+names.forEach(function (names, index, array) {
+
+    // element is the shape name
+    // index is the iterator
+    // array is the shapes array itself
+
+    console.log('The name at index ' + index + ' is: ' + names);
+});
 
 
 
