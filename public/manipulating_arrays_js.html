@@ -44,12 +44,12 @@ var index = planets.indexOf('earth');
 
 console.log('Using splice to remove the planet after Earth.');
 
-removed = planets.splice(planets.indexOf('earth'), 1);
+var marsArray = planets.splice(planets.indexOf('earth') + 1, 1);
 // todo: Do what the log statement above says you will do.
 logPlanets();
 
 console.log('Using splice to add back the planet after Earth.');
-planets.splice(planets.indexOf('earth') + 1, 0, 'mars');
+planets.splice(planets.indexOf('earth') + 1, 0, marsArray[]);
 
 // todo: Do what the log statement above says you will do.
 logPlanets();
