@@ -8,27 +8,27 @@
 
 
 
-<script>
-'use strict'
+	<script>
+	'use strict'
 // todo: Ask the user for their name.
 
 
-	var response = prompt("what is your name?");
+var response = prompt("what is your name?");
+if (response != null) {
+	response = response.trim();	
+};
+
+
+while (response == "" || response == null) {
+	response = prompt("please enter your name");
+
 	if (response != null) {
 		response = response.trim();	
-		};
-	
+	};
+	console.log(response);
 
-	while (response == "" || response == null) {
-		response = prompt("please enter your name");
+}
 
-		if (response != null) {
-			response = response.trim();	
-		};
-		console.log(response);
-
-		}
-	
 
 
 // next, we will send a message back to the user that uses their response
@@ -47,7 +47,7 @@ if (question) {
 
 
 
-		
+
 
 
       //Keep asking if an empty input is provided.

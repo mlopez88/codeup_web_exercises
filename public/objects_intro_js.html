@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>objects intro</title>
+</head>
+<body>
+	<script>
+'use strict'
+
+
+// var car = {
+// 	"make": "chevy",
+// 	"model": "corvette",
+// 	"years": [1999, 1985, 1967],
+// 	"honk": function () {
+// 		return 'Honk Honk';
+
+// 	},
+// 	"getMakeAndModel": function() {
+// 		return "the car is a " + this.make + " " + this.model;
+
+// 	},
+
+// 	"getFirstYear": function() {
+// 		var yearsInOrder = this.years.sort();
+// 		return yearsInOrder[0];
+// 	}
+
+// }
+// console.log(car.getMakeAndModel());
+// todo:
+// Create person object with firstName and lastName properties (set to your first and last name).
+
+var person = {
+	'firstName': "mike",
+	'lastName' : "lopez",
+	"sayHello": function() {
+		this.sayHello = this.firstName + " " + this.lastName;
+	  			alert("Hello " + this.sayHello);
+	}
+
+
+
+
+
+}
+
+// todo:
+// Add a say hello method to the person object that alerts hello using the firstName and lastName properties.
+
+// Say hello from the person object.
+person.sayHello();
+
+
+</script>
+</body>
+</html>
