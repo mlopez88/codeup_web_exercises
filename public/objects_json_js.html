@@ -3,8 +3,8 @@
 	<title>objects json</title>
 </head>
 <body>
-<script>
-'use strict'
+	<script>
+	'use strict'
 	// todo:
 
 
@@ -19,29 +19,64 @@
 
 
 
-	
-var books = [
-	{
-	
 
-    "author" : {
-    	"firstName" : "first name1",
-    	"lastName" : "last name1"
-    },
-	"title" : "book1"
-},
+var books = [
 {
 	
+	"title" : "book1",
 
-    "author" : {
-    	"firstName" : "first name2",
-    	"lastName" : "last name2"
-    },
+	"author" : {
+		"firstName" : "first name1",
+		"lastName" : "last name1"
+	},
+},
 
-    "title" : "book2"
-}
 
-    	
+{
+	"title" : "book2",
+
+	"author" : {
+		"firstName" : "first name2",
+		"lastName" : "last name2"
+
+	},
+},
+
+{
+	
+	"title" : "book3",
+
+	"author" : {
+		"firstName" : "first name3",
+		"lastName" : "last name3"
+	},
+},
+
+
+{
+	
+	"title" : "book4",
+
+	"author" : {
+		"firstName" : "first name4",
+		"lastName" : "last name4"
+	},
+},
+
+{
+	
+	"title" : "book5",
+
+	"author" : {
+		"firstName" : "first name5",
+		"lastName" : "last name5"
+	},
+},
+
+
+
+
+
 
 
 ]
@@ -51,28 +86,44 @@ console.log(books);
 // log out the books array
 
 
-// books.forEach(function (names, index, array) {
+books.forEach(function(book, index, array) {
 
-//     // element is the shape name
-//     // index is the iterator
-//     // array is the shapes array itself
+    // element is the shape name
+    // index is the iterator
+    // array is the shapes array itself
 
-//     // todo:
-// // Loop through the array of books using .forEach and print out the specified information about each one.
-// // start loop here
-//     // console.log("Book #" + todo);index of
-//     console.log("Title: " + todo);
-//     console.log("Author: " + todo);
-//     console.log("---");
-// // end loop here
+    // todo:
+// Loop through the array of books using .forEach and print out the specified information about each one.
+// start loop here
+    // console.log("Book #" + todo);index of
+    console.log("Title: " + book.title);
+    console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    console.log("---");
+// end loop here
 
-// });
+});
 
-// // // todo:
-// // // Loop through the array of books using .forEach and print out the specified information about each one.
-// // // start loop here
 
-// // // end loop here
+var arrayOfStrings = []
+
+var string = '';
+
+books.forEach(function(book, index, array) {
+	string = book.title + ' was written by ' + book.author.firstName + " " + book.author.lastName;
+
+	arrayOfStrings.push(string);
+
+
+});
+
+arrayOfStrings.forEach(function(string, index, array) {
+console.log(string);
+
+
+
+});
+
+
 
 
 

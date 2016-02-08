@@ -70,18 +70,24 @@ function validNumbers(x, y) {
 	}
 
 
+	function isNumber(n) {
+		if (isNan(n)) {
+			console.log("parameters must be numbers");
+			return true;
+		}
+
+	}
+
+
 
 
 
 }
 
 function sum(a, b) {
-	if (typeof a == 'number' && typeof b == 'number') {
+	if (isNumber(a) && isNumber(b)) {
 		return a + b;
-	} else {
-		alert("parameters must be numbers");
-		return false;
-	}
+	
     return console.log(a + b);
 }
 sum("2", 4);

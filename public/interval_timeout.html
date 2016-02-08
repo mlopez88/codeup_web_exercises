@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>interval timeout</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var count = 0;
+	var max = 10;
+	var interval = 1000; // interval time in milliseconds
+
+	var intervalId = setInterval(function() {
+	if(count >= max) {
+		console.log('All Done');
+		clearInterval(intervalId);
+	} else {
+		count++;
+		console.log('the interval function has run ' + count + 'times');
+			}
+
+	}, interval);
+
+
+
+
+	</script>
+
+</body>
+</html>
