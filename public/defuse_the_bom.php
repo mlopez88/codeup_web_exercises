@@ -9,6 +9,7 @@
     <button id="defuser">Defuse the BOM</button>
 
     <script>
+    "use strict";
         var detonationTimer = 5;
         var interval = 1000;
 
