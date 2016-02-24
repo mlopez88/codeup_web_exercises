@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Page</title>
+	<style>
+	.important {
+		text-align: center;
+		border-radius: 25px;
+	}
+	</style>
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script>
+	"use strict";
+
+        // $(document).ready(function() {
+        //     $('.important').css('background-color', 'blue');
+        //     $('p').css('background-color', 'red');
+        // });
+
+$(document).ready(function() {
+	$('h1').click(function() {
+		$(this).css('background-color', 'red');
+	});
+});
+ $(document).ready(function() {
+            $('p').dblclick(function() {
+             $(this).css('fontSize', '40px');
+            });
+        });
+
+  $(document).ready(function() {
+            $('li').hover(
+                function() {
+                    $(this).css('background-color', '#FF0');
+                },
+                function() {
+                    $(this).css('background-color', '#FFF');
+                }
+            );
+        });
+</script>
+</head>
+<body>
+	
+	<div class="codeup">
+		<h1>Jquery</h1>
+		<h3>NOTICE</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+		</div>
+		<div class="codeup">
+			<h2>Lorem Ipsum</h2>
+			<p>Lorem ipsum dolor sit amet, incididunt ut <span class="codeup">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.</p>
+		</div>
+		<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+
+		<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+	</body>
+	</html>

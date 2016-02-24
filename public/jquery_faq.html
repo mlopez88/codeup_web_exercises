@@ -1,0 +1,141 @@
+<html>
+<head>
+	<title>jquery faq</title>
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<!-- <link href="/css/custom1.css" rel="stylesheet"> -->
+	<style>
+	.invisible {
+		display: none;
+	}
+
+
+
+	</style>
+</head>
+<body>
+
+	<a href='#' id='toggle'>Toggle</a>
+
+	<!-- // question then answer -->
+	<dl>
+		<dt>Q - How old is the National Park System?</dt>
+		<dd class='invisible'>A - The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an Act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park.</dd>
+
+		<br>
+
+		<dt>Q - How do I obtain a park pass?</dt>
+		<dd class='invisible'>A - You can obtain park passes by visiting your nearest park site. Most sites have passes available; we recommend calling a park prior to your visit. </dd>
+
+		<br>
+
+		<dt>Q - What are concessions?</dt>
+		<dd class='invisible'>A - Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 500 NPS concession contracts in more than 120 different park units) vary in size from small, family-owned businesses to national/international corporations. Learn more about commercial services in the National Park Service.</dd>
+
+		<br>
+
+		<dt>Q - How many people visit the national parks?</dt>
+		<dd class='invisible'>A - Total recreation visitors to the national parks in 2014: 292,800,082</dd>
+
+		<br>
+
+		<dt>Q - Where can I find a park map?</dt>
+		<dd class='invisible'>A - You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
+
+		<br>
+
+		<dt>Q - How do I make reservations for camping/lodging in national parks?</dt>
+		<dd class='invisible'>A - For campground reservations, visit Recreation.gov. Not all parks participate in this service; many campgrounds are first come, first served. For more information on specific camping and lodging services offered at the park(s) of your interest, please check the specific park websites.</dd>
+
+		<br>
+
+		<dt>Q - What role did the National Park Service have in the Deepwater Horizon oil spill response?</dt>
+		<dd class='invisible'>A - The National Park Service was an integral part of the national federal response to the explosion of the Deepwater Horizon drilling rig which occurred in the Gulf of Mexico on April 20, 2010. Find more information about our role and how we will continue to protect your national parks.</dd>
+
+		<br>
+
+		<dt>Q - What do I need to know about driving off road in national parks?</dt>
+		<dd class='invisible'>A - Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
+
+		<br>
+
+		<dt>Q - How many people visit the national parks?</dt>
+		<dd class='invisible'>A - Total recreation visitors to the national parks in 2014: 292,800,082</dd>
+
+		<br>
+
+		<dt>Q - What is the largest national park site?</dt>
+		<dd class='invisible'>A - Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
+	</dl>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<h1>Parks List</h1>
+	<h3 id='nationalToggle1'>Denali</h3>
+	<ul id="nationalPark1">
+		<li class='item1'>The native Koyukon Athabascan people call the mountain Denali, which is usually translated as "The Great One."</li>
+		<li>Tallest Mountain in North America</li>
+		<li>Denali's height was recalculated at 20,310 feet in September 2015</li>
+		<li>More than 400,000 people visit Denali National Park and Preserve each year</li>
+		<li>A gold prospector, William Dickey, named it Mount McKinley in 1896</li>
+	</ul>
+	<br>
+	<h3 id='nationalToggle2'>Badlands</h3>
+	<ul id="nationalPark2">
+		<li class='item1'>The largest animal in the national park is the reintroduced American bison</li>
+		<li>The White River Badlands long have been host to various Indian tribes and are encompassed in the traditional homeland of the Oglala Lakota</li>
+		<li>The park is thought to protect the largest expanse of mixed-grass prairie in the nation</li>
+		<li>The striking scarp called the Wall is the great landmark of the Badlands, a 60-mile battlement stretching from Scenic to Kadoka and gradually retreating northward from the White River that excavated it.</li>
+		<li>Established as a National Monument in 1939</li>
+	</ul>
+
+	<br>
+	<h3 id='nationalToggle3'>Everglades</h3>
+	<ul id="nationalPark3">
+		<li class='item1'>It’s a river</li>
+		<li>It’s the only place in the world where alligators and crocodiles coexist</li>
+		<li>Fire is common in the Everglades – and important</li>
+		<li>There are 9 habitats providing a home to 16 endangered or threatened species</li>
+		<li>It provides drinking water for 7 million Floridians</li>
+	</ul>
+
+
+	<script>
+	$(document).ready(function(e) {
+		$('#toggle').click(function(e){
+			e.preventDefault();
+			$('dd').fadeToggle();
+		});
+		
+
+	});
+
+	$(document).ready(function() {
+		var uls = $('ul');
+
+		uls.each(function(){
+			$(this).children().first().css("font-weight", "bold");
+
+		});
+	});
+
+	   // $('li').click(function() {
+	   // 		$(this).parent().addClass('invisible');
+	   // });
+$('#nationalToggle1').click(function() {
+	$('#nationalPark1').fadeToggle();
+});
+$('#nationalToggle2').click(function() {
+	$('#nationalPark2').fadeToggle();
+});
+$('#nationalToggle3').click(function() {
+	$('#nationalPark3').fadeToggle();
+});
+
+
+	 // $( "li.item1" ).css( "font-weight", "bold" );
+	 // $('li').first().css('font-weight', 'bold');
+	 </script>
+
+	</body>
+	</html>

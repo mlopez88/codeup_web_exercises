@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <link href="/css/bootstrap.custom.css" rel="stylesheet">
+    <style type="text/css">
+    #map-canvas {
+        width: 770px;
+        height: 481px;
+    }
+    </style>
+</head>
+<body>
+
+
+    <center>
+    <div class="col-lg-4" id='dayOne'>
+    </div>
+
+    <div class="col-lg-4"id='dayTwo'>
+    </div>
+
+    <div class="col-lg-4"id='dayThree'>
+    </div>
+</center>
+    <!-- div to hold map -->
+
+    <center><div id="map-canvas"></div></center>
+
+<!--     <input class='lat' id='left' type='text'>
+
+    <input class='long' id='right' type='text'>
+
+    <button id ='latLong'>button</button> -->
+
+
+    <script>
+    var lat = "29.42412";
+    var lon = "-98.493629";
+
+    function weatherLocation(){
+        $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+            APPID: "b4e5b3178494254cf208cc83f4a6e03a",
+            lat:     lat,
+            lon:     lon,
+            units: "imperial",
+            cnt: '3'
+        }).done(function(weatherData){
+            console.log(weatherData);
+
+            var currentWeather = " ";
+
+
+
+        // currentWeather += '<center>';
+
+        currentWeather +=  weatherData.city.name + '<br>';
+
+
+        currentWeather += '<img src=http://openweathermap.org/img/w/' + weatherData.list[0].weather[0].icon +  '.png>' + '<br/>';
+
+        currentWeather += weatherData.list[0].temp.max + '/' + weatherData.list[0].temp.min + '<br/>';
+
+        currentWeather += 'Clouds: ' + weatherData.list[0].weather[0].description +'<br/>';
+
+        currentWeather += 'Humidity: ' + weatherData.list[0].humidity + '<br/>';
+
+        currentWeather += 'Wind: ' + weatherData.list[0].speed + '<br/>';
+
+        currentWeather += 'Pressure: ' + weatherData.list[0].pressure + '<br/>';
+
+        // currentWeather += '</center>';
+
+        $('#dayOne').html(currentWeather);
+
+        var tomorrowWeather = " ";
+
+
+        tomorrowWeather +=  weatherData.city.name + '<br>';
+
+        tomorrowWeather += '<img src=http://openweathermap.org/img/w/' + weatherData.list[1].weather[0].icon +  '.png>' + '<br/>';
+
+        tomorrowWeather += weatherData.list[1].temp.max + '/' + weatherData.list[1].temp.min + '<br/>';
+
+        tomorrowWeather += 'Clouds: ' + weatherData.list[1].weather[0].description +'<br/>';
+
+        tomorrowWeather += 'Humidity: ' + weatherData.list[1].humidity + '<br/>';
+
+        tomorrowWeather += 'Wind: ' + weatherData.list[1].speed + '<br/>';
+
+        tomorrowWeather += 'Pressure: ' + weatherData.list[1].pressure + '<br/>';
+
+        $('#dayTwo').html(tomorrowWeather);
+
+        var lastWeather = " ";
+
+        lastWeather +=  weatherData.city.name + '<br>';
+
+        lastWeather += '<img src=http://openweathermap.org/img/w/' + weatherData.list[2].weather[0].icon +  '.png>' + '<br/>';
+
+        lastWeather += weatherData.list[2].temp.max + '/' + weatherData.list[2].temp.min + '<br/>';
+
+        lastWeather += 'Clouds: ' + weatherData.list[2].weather[0].description +'<br/>';
+
+        lastWeather += 'Humidity: ' + weatherData.list[2].humidity + '<br/>';
+
+        lastWeather += 'Wind: ' + weatherData.list[2].speed + '<br/>';
+
+        lastWeather += 'Pressure: ' + weatherData.list[2].pressure + '<br/>';
+
+        $('#dayThree').html(lastWeather);
+
+
+
+
+
+
+
+    });
+};
+
+weatherLocation();
+
+
+$('#latLong').click(function(){
+
+
+    lat = $('#left').val();
+    lon = $('#right').val();
+
+
+
+    console.log(this);
+    weatherLocation();
+});
+
+
+
+</script>
+
+<!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjUzQXiov5g7ZFpQHoWLgbwJoaNrDlYtM"></script>
+
+<!-- Script to show address on map -->
+<script type="text/javascript">
+(function() {
+    "use strict";
+    
+    var myLatLng = new google.maps.LatLng(29.42412,-98.493629);
+    var mapOptions = {
+      zoom: 4,
+      center: myLatLng
+  };
+
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
+        var marker = new google.maps.Marker({
+            map: map,           
+            "position": myLatLng,
+            draggable:true,
+            title:"Drag me!",
+            animation: google.maps.Animation.DROP,
+
+
+});
+        marker.addListener('dragend',function(){
+            var position = marker.getPosition();
+            marker.getPosition();
+
+            lat = position.lat();
+            lon = position.lng();
+
+            weatherLocation();
+
+            console.log(position.lat());
+            console.log(position.lng());
+        })
+
+
+                function toggleBounce() {
+                    if (marker.getAnimation() !== null) {
+                        marker.setAnimation(null);
+                    } else {
+                        marker.setAnimation(google.maps.Animation.BOUNCE);
+                    }
+                }
+
+
+            })();
+
+
+
+            </script>
+
+        </body>
+        </html>

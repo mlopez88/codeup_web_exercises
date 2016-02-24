@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google maps api </title>
+	<style type="text/css">
+	#map-canvas {
+		width: 770px;
+		height: 481px;
+	}
+	</style>
+	<link href="/css/bootstrap.custom.css" rel="stylesheet">
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<p class="text-center">Google Maps Api
+					</h3>
+				</p>
+			</div>
+			
+			<!-- div to hold map -->
+			<center><div id="map-canvas"></div></center>
+			
+
+			<!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjUzQXiov5g7ZFpQHoWLgbwJoaNrDlYtM"></script>
+
+			<!-- Script to show address on map -->
+			<script type="text/javascript">
+			(function() {
+				"use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 15,
+
+            // This sets the center of the map at our location
+            center: {
+            	lat:  29.4284595,
+            	lng: -98.492433
+            },
+
+
+        };
+        var contentString = '<div id="content">'+
+        '<div>'+
+        '</div>'+
+        '<h3 id="firstHeading" class="firstHeading">Long Horn Cafe</h3>'+
+        '<div>'+
+        '<p><b>Long horn cafe</b> has really good <b>Hamburgers</b></p>' +
+        
+        '<p class="text-info"><a href="http://longhorncafe.com">'+
+        'longhorncafewebsite</a></p> '+
+        
+        '</div>'+
+        '</div>';
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var geocoder = new google.maps.Geocoder();
+
+        var restraunt = "17625 Blanco, San Antonino, TX";
+
+        geocoder.geocode({ address: restraunt }, function(results, status) {
+
+        	if (status == google.maps.GeocoderStatus.OK) {
+        		console.log(results);
+        		map.setCenter(results[0].geometry.location)
+
+        		var marker = new google.maps.Marker({
+        			"map": map,
+        			"position": results[0].geometry.location,
+        			animation: google.maps.Animation.DROP,
+        			
+
+
+
+
+        		});
+        		// Create a new infoWindow object with content
+        		var infowindow = new google.maps.InfoWindow({
+        			content: contentString
+        		});
+        		marker.addListener('click', function() {
+        			infowindow.open(map, marker);
+        		});
+
+				// // Open the window using our map and marker
+				// infowindow.open(map, marker);
+				function toggleBounce() {
+					if (marker.getAnimation() !== null) {
+						marker.setAnimation(null);
+					} else {
+						marker.setAnimation(google.maps.Animation.BOUNCE);
+					}
+				}
+
+
+			}
+
+		})
+
+
+
+    })();
+    
+
+
+    </script>
+</p>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>
